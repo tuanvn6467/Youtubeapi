@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="youtubeModelStoreContainer" CdmEntityContainer="youtubeEntities">
+    <EntitySetMapping Name="Channels">
+      <EntityTypeMapping TypeName="youtubeModel.Channel">
+        <MappingFragment StoreEntitySet="Channel">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ChannelID" ColumnName="ChannelID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="yt_Get_Channel" FunctionName="youtubeModel.Store.yt_Get_Channel">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="youtubeModel.yt_Get_Channel_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ChannelID" ColumnName="ChannelID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
