@@ -1,15 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="youtubeModelStoreContainer" CdmEntityContainer="youtubeEntities">
-    <EntitySetMapping Name="Channels">
-      <EntityTypeMapping TypeName="youtubeModel.Channel">
-        <MappingFragment StoreEntitySet="Channel">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="ChannelID" ColumnName="ChannelID" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="yt_Get_Channel" FunctionName="youtubeModel.Store.yt_Get_Channel">
       <ResultMapping>
         <ComplexTypeMapping TypeName="youtubeModel.yt_Get_Channel_Result">
@@ -19,5 +10,45 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="Channels">
+      <EntityTypeMapping TypeName="youtubeModel.Channel">
+        <MappingFragment StoreEntitySet="Channel">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="ChannelId" ColumnName="ChannelId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Video_NumberCount_History">
+      <EntityTypeMapping TypeName="youtubeModel.Video_NumberCount_History">
+        <MappingFragment StoreEntitySet="Video_NumberCount_History">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CommentCount" ColumnName="CommentCount" />
+          <ScalarProperty Name="FavouriteCount" ColumnName="FavouriteCount" />
+          <ScalarProperty Name="DislikeCount" ColumnName="DislikeCount" />
+          <ScalarProperty Name="LikeCount" ColumnName="LikeCount" />
+          <ScalarProperty Name="ViewCount" ColumnName="ViewCount" />
+          <ScalarProperty Name="VideoId" ColumnName="VideoId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Videos">
+      <EntityTypeMapping TypeName="youtubeModel.Video">
+        <MappingFragment StoreEntitySet="Video">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="VideoImageUrl" ColumnName="VideoImageUrl" />
+          <ScalarProperty Name="VideoTitle" ColumnName="VideoTitle" />
+          <ScalarProperty Name="VideoEncryptedId" ColumnName="VideoEncryptedId" />
+          <ScalarProperty Name="ChannelId" ColumnName="ChannelId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="yt_Save_Video" FunctionName="youtubeModel.Store.yt_Save_Video" />
   </EntityContainerMapping>
 </Mapping>

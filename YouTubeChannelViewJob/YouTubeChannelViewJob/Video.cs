@@ -12,11 +12,13 @@ namespace YouTubeChannelViewJob
     using System;
     using System.Collections.Generic;
     
-    public partial class Channel
+    public partial class Video
     {
         public int Id { get; set; }
         public string ChannelId { get; set; }
-        public string Description { get; set; }
+        public string VideoEncryptedId { get; set; }
+        public string VideoTitle { get; set; }
+        public string VideoImageUrl { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<System.DateTime> UpdatedDate { get; set; }
     }

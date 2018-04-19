@@ -5,7 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="4587e1a2b94b4ae7a2a3dbef24c94bef" Name="Diagram1">
-        <EntityTypeShape EntityType="youtubeModel.Channel" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="youtubeModel.Channel" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="youtubeModel.Video_NumberCount_History" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="youtubeModel.Video" Width="1.5" PointX="3.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

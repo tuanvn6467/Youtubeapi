@@ -18,3 +18,23 @@ D:\Project\Youtube API\YouTubeChannelViewJob\YouTubeChannelViewJob\obj\Debug\You
 D:\Project\Youtube API\YouTubeChannelViewJob\YouTubeChannelViewJob\obj\Debug\YouTubeChannelViewJob.pdb
 D:\Project\Youtube API\YouTubeChannelViewJob\YouTubeChannelViewJob\bin\Debug\EntityFramework.dll
 D:\Project\Youtube API\YouTubeChannelViewJob\YouTubeChannelViewJob\bin\Debug\EntityFramework.xml
+C:\Project\Youtube api\Crawler Channel\YouTubeChannelViewJob\YouTubeChannelViewJob\bin\Debug\YouTubeChannelViewJob.exe.config
+C:\Project\Youtube api\Crawler Channel\YouTubeChannelViewJob\YouTubeChannelViewJob\obj\Debug\YouTubeChannelViewJob.exe
+C:\Project\Youtube api\Crawler Channel\YouTubeChannelViewJob\YouTubeChannelViewJob\obj\Debug\YouTubeChannelViewJob.pdb
+C:\Project\Youtube api\Crawler Channel\YouTubeChannelViewJob\YouTubeChannelViewJob\bin\Debug\YouTubeChannelViewJob.exe
+C:\Project\Youtube api\Crawler Channel\YouTubeChannelViewJob\YouTubeChannelViewJob\bin\Debug\YouTubeChannelViewJob.pdb
+C:\Project\Youtube api\Crawler Channel\YouTubeChannelViewJob\YouTubeChannelViewJob\bin\Debug\EntityFramework.dll
+C:\Project\Youtube api\Crawler Channel\YouTubeChannelViewJob\YouTubeChannelViewJob\bin\Debug\Google.Apis.Auth.dll
+C:\Project\Youtube api\Crawler Channel\YouTubeChannelViewJob\YouTubeChannelViewJob\bin\Debug\Google.Apis.Auth.PlatformServices.dll
+C:\Project\Youtube api\Crawler Channel\YouTubeChannelViewJob\YouTubeChannelViewJob\bin\Debug\Google.Apis.Core.dll
+C:\Project\Youtube api\Crawler Channel\YouTubeChannelViewJob\YouTubeChannelViewJob\bin\Debug\Google.Apis.dll
+C:\Project\Youtube api\Crawler Channel\YouTubeChannelViewJob\YouTubeChannelViewJob\bin\Debug\Google.Apis.PlatformServices.dll
+C:\Project\Youtube api\Crawler Channel\YouTubeChannelViewJob\YouTubeChannelViewJob\bin\Debug\Google.Apis.YouTube.v3.dll
+C:\Project\Youtube api\Crawler Channel\YouTubeChannelViewJob\YouTubeChannelViewJob\bin\Debug\Newtonsoft.Json.dll
+C:\Project\Youtube api\Crawler Channel\YouTubeChannelViewJob\YouTubeChannelViewJob\bin\Debug\EntityFramework.xml
+C:\Project\Youtube api\Crawler Channel\YouTubeChannelViewJob\YouTubeChannelViewJob\bin\Debug\Google.Apis.xml
+C:\Project\Youtube api\Crawler Channel\YouTubeChannelViewJob\YouTubeChannelViewJob\bin\Debug\Google.Apis.Auth.xml
+C:\Project\Youtube api\Crawler Channel\YouTubeChannelViewJob\YouTubeChannelViewJob\bin\Debug\Google.Apis.Core.xml
+C:\Project\Youtube api\Crawler Channel\YouTubeChannelViewJob\YouTubeChannelViewJob\bin\Debug\Google.Apis.YouTube.v3.xml
+C:\Project\Youtube api\Crawler Channel\YouTubeChannelViewJob\YouTubeChannelViewJob\bin\Debug\Newtonsoft.Json.xml
+C:\Project\Youtube api\Crawler Channel\YouTubeChannelViewJob\YouTubeChannelViewJob\obj\Debug\YouTubeChannelViewJob.csprojResolveAssemblyReference.cache

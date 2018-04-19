@@ -5,11 +5,48 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ChannelID" Type="nvarchar" MaxLength="500" />
+    <Property Name="ChannelId" Type="nvarchar" MaxLength="500" />
     <Property Name="Description" Type="nvarchar" MaxLength="4000" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Video">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ChannelId" Type="nvarchar" MaxLength="500" />
+    <Property Name="VideoEncryptedId" Type="nvarchar" MaxLength="500" />
+    <Property Name="VideoTitle" Type="nvarchar" MaxLength="500" />
+    <Property Name="VideoImageUrl" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Video_NumberCount_History">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VideoId" Type="int" />
+    <Property Name="ViewCount" Type="bigint" />
+    <Property Name="LikeCount" Type="bigint" />
+    <Property Name="DislikeCount" Type="bigint" />
+    <Property Name="FavouriteCount" Type="bigint" />
+    <Property Name="CommentCount" Type="bigint" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
   </EntityType>
   <Function Name="yt_Get_Channel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="yt_Save_Video" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ChannelId" Type="nvarchar" Mode="In" />
+    <Parameter Name="VideoEncryptedId" Type="nvarchar" Mode="In" />
+    <Parameter Name="VideoTitle" Type="nvarchar" Mode="In" />
+    <Parameter Name="VideoImageUrl" Type="nvarchar" Mode="In" />
+    <Parameter Name="Id" Type="int" Mode="InOut" />
+  </Function>
   <EntityContainer Name="youtubeModelStoreContainer">
     <EntitySet Name="Channel" EntityType="Self.Channel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Video" EntityType="Self.Video" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Video_NumberCount_History" EntityType="Self.Video_NumberCount_History" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

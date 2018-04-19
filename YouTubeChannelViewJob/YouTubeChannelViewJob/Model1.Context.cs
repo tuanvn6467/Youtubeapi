@@ -29,10 +29,33 @@ namespace YouTubeChannelViewJob
         }
     
         public DbSet<Channel> Channels { get; set; }
+        public DbSet<Video_NumberCount_History> Video_NumberCount_History { get; set; }
+        public DbSet<Video> Videos { get; set; }
     
         public virtual ObjectResult<yt_Get_Channel_Result> yt_Get_Channel()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<yt_Get_Channel_Result>("yt_Get_Channel");
+        }
+    
+        public virtual int yt_Save_Video(string channelId, string videoEncryptedId, string videoTitle, string videoImageUrl, ObjectParameter id)
+        {
+            var channelIdParameter = channelId != null ?
+                new ObjectParameter("ChannelId", channelId) :
+                new ObjectParameter("ChannelId", typeof(string));
+    
+            var videoEncryptedIdParameter = videoEncryptedId != null ?
+                new ObjectParameter("VideoEncryptedId", videoEncryptedId) :
+                new ObjectParameter("VideoEncryptedId", typeof(string));
+    
+            var videoTitleParameter = videoTitle != null ?
+                new ObjectParameter("VideoTitle", videoTitle) :
+                new ObjectParameter("VideoTitle", typeof(string));
+    
+            var videoImageUrlParameter = videoImageUrl != null ?
+                new ObjectParameter("VideoImageUrl", videoImageUrl) :
+                new ObjectParameter("VideoImageUrl", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("yt_Save_Video", channelIdParameter, videoEncryptedIdParameter, videoTitleParameter, videoImageUrlParameter, id);
         }
     }
 }

@@ -12,11 +12,15 @@ namespace YouTubeChannelViewJob
     using System;
     using System.Collections.Generic;
     
-    public partial class Channel
+    public partial class Video_NumberCount_History
     {
         public int Id { get; set; }
-        public string ChannelId { get; set; }
-        public string Description { get; set; }
+        public Nullable<int> VideoId { get; set; }
+        public Nullable<long> ViewCount { get; set; }
+        public Nullable<long> LikeCount { get; set; }
+        public Nullable<long> DislikeCount { get; set; }
+        public Nullable<long> FavouriteCount { get; set; }
+        public Nullable<long> CommentCount { get; set; }
         public Nullable<System.DateTime> CreatedDate { get; set; }
         public Nullable<System.DateTime> UpdatedDate { get; set; }
     }
