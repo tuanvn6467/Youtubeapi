@@ -47,6 +47,15 @@
           <Parameter Name="VideoEncryptedId" Type="nvarchar" Mode="In" />
           <Parameter Name="VideoTitle" Type="nvarchar" Mode="In" />
           <Parameter Name="VideoImageUrl" Type="nvarchar" Mode="In" />
+          <Parameter Name="ReturnId" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="yt_Save_Video_NumberCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="VideoId" Type="int" Mode="In" />
+          <Parameter Name="ViewCount" Type="bigint" Mode="In" />
+          <Parameter Name="LikeCount" Type="bigint" Mode="In" />
+          <Parameter Name="DislikeCount" Type="bigint" Mode="In" />
+          <Parameter Name="FavouriteCount" Type="bigint" Mode="In" />
+          <Parameter Name="CommentCount" Type="bigint" Mode="In" />
           <Parameter Name="Id" Type="int" Mode="InOut" />
         </Function>
         <EntityContainer Name="youtubeModelStoreContainer">
@@ -68,6 +77,15 @@
             <Parameter Name="VideoEncryptedId" Mode="In" Type="String" />
             <Parameter Name="VideoTitle" Mode="In" Type="String" />
             <Parameter Name="VideoImageUrl" Mode="In" Type="String" />
+            <Parameter Name="ReturnId" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="yt_Save_Video_NumberCount">
+            <Parameter Name="VideoId" Mode="In" Type="Int32" />
+            <Parameter Name="ViewCount" Mode="In" Type="Int64" />
+            <Parameter Name="LikeCount" Mode="In" Type="Int64" />
+            <Parameter Name="DislikeCount" Mode="In" Type="Int64" />
+            <Parameter Name="FavouriteCount" Mode="In" Type="Int64" />
+            <Parameter Name="CommentCount" Mode="In" Type="Int64" />
             <Parameter Name="Id" Mode="InOut" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
@@ -167,6 +185,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="yt_Save_Video" FunctionName="youtubeModel.Store.yt_Save_Video" />
+          <FunctionImportMapping FunctionImportName="yt_Save_Video_NumberCount" FunctionName="youtubeModel.Store.yt_Save_Video_NumberCount" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

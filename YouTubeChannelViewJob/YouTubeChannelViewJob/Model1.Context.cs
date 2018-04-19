@@ -11,11 +11,9 @@ namespace YouTubeChannelViewJob
 {
     using System;
     using System.Data.Entity;
+    using System.Data.Entity.Core.Objects;
     using System.Data.Entity.Infrastructure;
-    using System.Data.Objects;
-    using System.Data.Objects.DataClasses;
-    using System.Linq;
-    
+
     public partial class youtubeEntities : DbContext
     {
         public youtubeEntities()
@@ -37,7 +35,7 @@ namespace YouTubeChannelViewJob
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<yt_Get_Channel_Result>("yt_Get_Channel");
         }
     
-        public virtual int yt_Save_Video(string channelId, string videoEncryptedId, string videoTitle, string videoImageUrl, ObjectParameter id)
+        public virtual int yt_Save_Video(string channelId, string videoEncryptedId, string videoTitle, string videoImageUrl, ObjectParameter returnId)
         {
             var channelIdParameter = channelId != null ?
                 new ObjectParameter("ChannelId", channelId) :
@@ -55,7 +53,36 @@ namespace YouTubeChannelViewJob
                 new ObjectParameter("VideoImageUrl", videoImageUrl) :
                 new ObjectParameter("VideoImageUrl", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("yt_Save_Video", channelIdParameter, videoEncryptedIdParameter, videoTitleParameter, videoImageUrlParameter, id);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("yt_Save_Video", channelIdParameter, videoEncryptedIdParameter, videoTitleParameter, videoImageUrlParameter, returnId);
+        }
+    
+        public virtual int yt_Save_Video_NumberCount(Nullable<int> videoId, Nullable<long> viewCount, Nullable<long> likeCount, Nullable<long> dislikeCount, Nullable<long> favouriteCount, Nullable<long> commentCount, ObjectParameter id)
+        {
+            var videoIdParameter = videoId.HasValue ?
+                new ObjectParameter("VideoId", videoId) :
+                new ObjectParameter("VideoId", typeof(int));
+    
+            var viewCountParameter = viewCount.HasValue ?
+                new ObjectParameter("ViewCount", viewCount) :
+                new ObjectParameter("ViewCount", typeof(long));
+    
+            var likeCountParameter = likeCount.HasValue ?
+                new ObjectParameter("LikeCount", likeCount) :
+                new ObjectParameter("LikeCount", typeof(long));
+    
+            var dislikeCountParameter = dislikeCount.HasValue ?
+                new ObjectParameter("DislikeCount", dislikeCount) :
+                new ObjectParameter("DislikeCount", typeof(long));
+    
+            var favouriteCountParameter = favouriteCount.HasValue ?
+                new ObjectParameter("FavouriteCount", favouriteCount) :
+                new ObjectParameter("FavouriteCount", typeof(long));
+    
+            var commentCountParameter = commentCount.HasValue ?
+                new ObjectParameter("CommentCount", commentCount) :
+                new ObjectParameter("CommentCount", typeof(long));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("yt_Save_Video_NumberCount", videoIdParameter, viewCountParameter, likeCountParameter, dislikeCountParameter, favouriteCountParameter, commentCountParameter, id);
         }
     }
 }
